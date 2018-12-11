@@ -25,19 +25,23 @@ ESLINT_FILES := $(JS_FILES)
 ifeq ($(shell uname -s),SunOS)
 	NODE_PREBUILT_VERSION =	v4.6.1
 	NODE_PREBUILT_TAG =	zone
-	NODE_PREBUILT_IMAGE = 18b094b0-eb01-11e5-80c1-175dac7ddf02
+	NODE_PREBUILT_IMAGE =	18b094b0-eb01-11e5-80c1-175dac7ddf02
 endif
 
 include ./tools/mk/Makefile.defs
+ifeq ($(shell uname -s),SunOS)
+	include ./tools/mk/Makefile.node_prebuilt.defs
+else
+	NODE := node
+	NPM := $(shell which npm)
+	NPM_EXEC=$(NPM)
+endif
 include ./tools/mk/Makefile.node_modules.defs
-
 
 #
 # Variables
 #
 
-NPM = npm
-NODE = node
 TEST_UNIT_JOBS ?= 4
 BUILD = $(TOP)/build
 CLEAN_FILES += $(BUILD)
@@ -99,5 +103,8 @@ git-hooks:
 	ln -sf ../../tools/pre-commit.sh .git/hooks/pre-commit
 
 include ./tools/mk/Makefile.deps
+ifeq ($(shell uname -s),SunOS)
+	include ./tools/mk/Makefile.node_prebuilt.targ
+endif
 include ./tools/mk/Makefile.targ
 include ./tools/mk/Makefile.node_modules.targ
