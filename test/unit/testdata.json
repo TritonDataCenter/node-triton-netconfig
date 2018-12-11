@@ -1,0 +1,510 @@
+{
+    "vms": {
+        "main": {
+            "uuid": "a9396198-f852-4b12-893d-ccdafa13ef0f",
+            "alias": "loadbalancer.east.joyent.us-a9396198",
+            "autoboot": true,
+            "brand": "joyent-minimal",
+            "billing_id": "00000000-0000-0000-0000-000000000000",
+            "cpu_cap": null,
+            "cpu_shares": 4,
+            "create_timestamp": "2018-11-16T16:16:28.767Z",
+            "customer_metadata": {
+              "SAPI_URL": "http://sapi.ruidc.joyent.us",
+              "user-script": "<snip>"
+            },
+            "datasets": [
+              "zones/a9396198-f852-4b12-893d-ccdafa13ef0f/data"
+            ],
+            "destroyed": null,
+            "firewall_enabled": false,
+            "internal_metadata": {},
+            "last_modified": "2018-11-20T21:48:59.000Z",
+            "limit_priv": "default",
+            "max_locked_memory": 512,
+            "max_lwps": 2000,
+            "max_physical_memory": 512,
+            "max_swap": 1024,
+            "nics": [
+              {
+                "interface": "net0",
+                "mac": "90:b8:d0:91:bd:90",
+                "vlan_id": 0,
+                "nic_tag": "external",
+                "gateway": "172.26.19.1",
+                "gateways": [
+                  "172.26.19.1"
+                ],
+                "netmask": "255.255.255.0",
+                "ip": "172.26.19.224",
+                "ips": [
+                  "172.26.19.224/24"
+                ],
+                "network_uuid": "2c606372-fa8d-452d-a93c-e4e98b98bda5",
+                "mtu": 1500,
+                "primary": true
+              },
+              {
+                "interface": "net1",
+                "mac": "90:b8:d0:f3:e4:25",
+                "vlan_id": 0,
+                "nic_tag": "manta",
+                "netmask": "255.255.255.0",
+                "ip": "10.77.77.16",
+                "ips": [
+                  "10.77.77.16/24"
+                ],
+                "network_uuid": "72437ec5-0215-4e59-92a9-da5b570ec4b3",
+                "mtu": 1500
+              },
+              {
+                "interface": "net2",
+                "mac": "90:b8:d0:08:ad:c8",
+                "vlan_id": 0,
+                "nic_tag": "admin",
+                "netmask": "255.255.255.0",
+                "ip": "10.99.99.47",
+                "ips": [
+                  "10.99.99.47/24"
+                ],
+                "network_uuid": "0a4d08a1-8e7f-48aa-9a68-91bdf2edd93e",
+                "mtu": 1500
+              }
+            ],
+            "owner_uuid": "58a49944-2b28-65ed-8992-dfa301152a67",
+            "platform_buildstamp": "20181012T154011Z",
+            "quota": 10,
+            "ram": 512,
+            "resolvers": [
+              "8.8.8.8",
+              "8.8.4.4",
+              "10.99.99.5"
+            ],
+            "server_uuid": "46561560-e276-e3b4-e7ec-f5e6f1c62e4c",
+            "snapshots": [],
+            "state": "running",
+            "tags": {
+              "manta_role": "loadbalancer"
+            },
+            "zfs_filesystem": "zones/a9396198-f852-4b12-893d-ccdafa13ef0f",
+            "zfs_io_priority": 100,
+            "zone_state": "running",
+            "zonepath": "/zones/a9396198-f852-4b12-893d-ccdafa13ef0f",
+            "zpool": "zones",
+            "boot_timestamp": "2018-11-20T22:25:26.000Z",
+            "dns_domain": "local",
+            "pid": 9495,
+            "tmpfs": 512,
+            "image_uuid": "cc31a90e-e8ef-11e8-9dd3-3779db84c64d"
+        },
+        "rack": {
+            "uuid": "cff3002a-f329-4aae-bee0-03743a7aa716",
+            "alias": "loadbalancer.east.joyent.us-cff3002a",
+            "autoboot": true,
+            "brand": "joyent-minimal",
+            "billing_id": "00000000-0000-0000-0000-000000000000",
+            "cpu_cap": null,
+            "cpu_shares": 4,
+            "create_timestamp": "2018-12-10T18:49:46.388Z",
+            "customer_metadata": {
+              "SAPI_URL": "http://sapi.ruidc.joyent.us",
+              "user-script": "<snip>"
+            },
+            "datasets": [
+              "zones/cff3002a-f329-4aae-bee0-03743a7aa716/data"
+            ],
+            "destroyed": null,
+            "firewall_enabled": false,
+            "internal_metadata": {},
+            "last_modified": "2018-12-10T18:50:37.000Z",
+            "limit_priv": "default",
+            "max_locked_memory": 512,
+            "max_lwps": 2000,
+            "max_physical_memory": 512,
+            "max_swap": 1024,
+            "nics": [
+              {
+                "interface": "net0",
+                "mac": "90:b8:d0:e4:4d:8b",
+                "vlan_id": 0,
+                "nic_tag": "external_rack_e50",
+                "gateway": "172.26.19.1",
+                "gateways": [
+                  "172.26.19.1"
+                ],
+                "netmask": "255.255.255.0",
+                "ip": "172.26.19.246",
+                "ips": [
+                  "172.26.19.246/24"
+                ],
+                "network_uuid": "f769454f-31f1-4e4b-b191-c2876b6814bb",
+                "mtu": 1500,
+                "primary": true
+              },
+              {
+                "interface": "net1",
+                "mac": "90:b8:d0:39:bc:14",
+                "vlan_id": 0,
+                "nic_tag": "manta_rack_e50",
+                "netmask": "255.255.255.0",
+                "ip": "10.111.111.6",
+                "ips": [
+                  "10.111.111.6/24"
+                ],
+                "network_uuid": "84fa6540-1218-41e8-ac19-06181c258495",
+                "mtu": 1500
+              },
+              {
+                "interface": "net2",
+                "mac": "90:b8:d0:13:af:09",
+                "vlan_id": 0,
+                "nic_tag": "admin_rack_e50",
+                "netmask": "255.255.255.0",
+                "ip": "10.222.222.13",
+                "ips": [
+                  "10.222.222.13/24"
+                ],
+                "network_uuid": "ef5461db-7a70-4920-b6fb-e5c4b9918de2",
+                "mtu": 1500
+              }
+            ],
+            "owner_uuid": "58a49944-2b28-65ed-8992-dfa301152a67",
+            "platform_buildstamp": "20181012T154011Z",
+            "quota": 10,
+            "ram": 512,
+            "resolvers": [
+              "8.8.8.8",
+              "8.8.4.4",
+              "10.99.99.5"
+            ],
+            "server_uuid": "02bfb3e3-cc8f-495a-a7d0-cd3b0186ed2e",
+            "snapshots": [],
+            "state": "running",
+            "tags": {
+              "manta_role": "loadbalancer"
+            },
+            "zfs_filesystem": "zones/cff3002a-f329-4aae-bee0-03743a7aa716",
+            "zfs_io_priority": 100,
+            "zone_state": "running",
+            "zonepath": "/zones/cff3002a-f329-4aae-bee0-03743a7aa716",
+            "zpool": "zones",
+            "boot_timestamp": "2018-12-10T18:50:04.000Z",
+            "dns_domain": "local",
+            "pid": 35709,
+            "tmpfs": 512,
+            "image_uuid": "cc31a90e-e8ef-11e8-9dd3-3779db84c64d"
+        }
+    },
+    "sysinfo": {
+        "rack": {
+            "Live Image": "20181012T154011Z",
+            "System Type": "SunOS",
+            "Boot Time": "1543434558",
+            "Datacenter Name": "ruidc",
+            "SDC Version": "7.0",
+            "Manufacturer": "Joyent",
+            "Product": "SmartDC HVM",
+            "Serial Number": "02bfb3e3-cc8f-495a-a7d0-cd3b0186ed2e",
+            "SKU Number": "001",
+            "HW Version": "7.20181112T065108Z",
+            "HW Family": "Virtual Machine",
+            "Setup": "true",
+            "VM Capable": true,
+            "Bhyve Capable": false,
+            "Bhyve Max Vcpus": 0,
+            "HVM API": false,
+            "CPU Type": "Unknown",
+            "CPU Virtualization": "none",
+            "CPU Physical Cores": 0,
+            "Admin NIC Tag": "admin_rack_e50",
+            "Admin IP": "10.222.222.10",
+            "UUID": "02bfb3e3-cc8f-495a-a7d0-cd3b0186ed2e",
+            "Hostname": "rui1",
+            "CPU Total Cores": 4,
+            "MiB of Memory": "8191",
+            "Zpool": "zones",
+            "Zpool Disks": "c3t0d0",
+            "Zpool Profile": "striped",
+            "Zpool Creation": 1542055707,
+            "Zpool Size in GiB": 188,
+            "Disks": {
+              "c2t0d0": {"Size in GB": 6},
+              "c3t0d0": {"Size in GB": 209}
+            },
+            "Boot Parameters": {
+              "module_name_0": "networking.json",
+              "hostname": "rui1",
+              "rabbitmq": "guest:guest:10.99.99.14:5672",
+              "rabbitmq_dns": "guest:guest:rabbitmq.ruidc.joyent.us:5672",
+              "admin_rack_e50_nic": "52:9d:88:56:09:c3",
+              "manta_rack_e50_nic": "52:11:49:5a:74:76",
+              "external_rack_e50_nic": "d2:35:42:95:cb:f6",
+              "console": "ttyb",
+              "boot_args": "",
+              "bootargs": ""
+            },
+            "SDC Agents": [
+              {
+                "name": "amon-agent",
+                "version": "1.0.1"
+              },
+              {
+                "name": "amon-relay",
+                "version": "1.0.1"
+              },
+              {
+                "name": "agents_core",
+                "version": "2.1.0"
+              },
+              {
+                "name": "cainstsvc",
+                "version": "0.0.3vrelease-20181122-20181121T194844Z-g92307e6"
+              },
+              {
+                "name": "smartlogin",
+                "version": "0.2.1-release-20181122-20181121T194443Z-gd6f0708"
+              },
+              {
+                "name": "config-agent",
+                "version": "1.8.1"
+              },
+              {
+                "name": "cabase",
+                "version": "1.0.3vrelease-20181122-20181121T194844Z-g92307e6"
+              },
+              {
+                "name": "marlin",
+                "version": "0.0.3"
+              },
+              {
+                "name": "cmon-agent",
+                "version": "1.10.0"
+              },
+              {
+                "name": "cn-agent",
+                "version": "2.3.2"
+              },
+              {
+                "name": "vm-agent",
+                "version": "1.8.0"
+              },
+              {
+                "name": "net-agent",
+                "version": "2.2.1"
+              },
+              {
+                "name": "firewaller",
+                "version": "1.5.1"
+              },
+              {
+                "name": "hagfish-watcher",
+                "version": "1.0.0-release-20181122-20181121T212704Z-g3caaea7"
+              }
+            ],
+            "Network Interfaces": {
+              "vioif0": {"MAC Address": "52:9d:88:56:09:c3", "ip4addr": "10.222.222.10", "Link Status": "up", "NIC Names": ["admin_rack_e50"]},
+              "vioif1": {"MAC Address": "52:11:49:5a:74:76", "ip4addr": "", "Link Status": "up", "NIC Names": ["manta_rack_e50"]},
+              "vioif2": {"MAC Address": "d2:35:42:95:cb:f6", "ip4addr": "", "Link Status": "up", "NIC Names": ["external_rack_e50"]},
+              "vioif3": {"MAC Address": "f2:9c:b6:e2:74:70", "ip4addr": "", "Link Status": "up", "NIC Names": []}
+            },
+            "Virtual Network Interfaces": {
+            },
+            "Link Aggregations": {
+            }
+        },
+        "main": {
+            "Live Image": "20181012T154011Z",
+            "System Type": "SunOS",
+            "Boot Time": "1542752612",
+            "Datacenter Name": "ruidc",
+            "SDC Version": "7.0",
+            "Manufacturer": "Joyent",
+            "Product": "SmartDC HVM",
+            "Serial Number": "46561560-e276-e3b4-e7ec-f5e6f1c62e4c",
+            "SKU Number": "001",
+            "HW Version": "7.20181112T065108Z",
+            "HW Family": "Virtual Machine",
+            "Setup": "true",
+            "VM Capable": true,
+            "Bhyve Capable": false,
+            "Bhyve Max Vcpus": 0,
+            "HVM API": false,
+            "CPU Type": "Unknown",
+            "CPU Virtualization": "none",
+            "CPU Physical Cores": 0,
+            "Admin NIC Tag": "admin",
+            "Admin IP": "10.99.99.1",
+            "UUID": "46561560-e276-e3b4-e7ec-f5e6f1c62e4c",
+            "Hostname": "headnode",
+            "CPU Total Cores": 8,
+            "MiB of Memory": "32767",
+            "Zpool": "zones",
+            "Zpool Disks": "c3t0d0",
+            "Zpool Profile": "striped",
+            "Zpool Creation": 1537380680,
+            "Zpool Size in GiB": 472,
+            "Disks": {
+              "c1d0": {"Size in GB": 8},
+              "c3t0d0": {"Size in GB": 524}
+            },
+            "Boot Parameters": {
+              "console": "ttya",
+              "headnode": "true",
+              "disable_uhci": "true",
+              "boot_args": "",
+              "bootargs": ""
+            },
+            "SDC Agents": [
+              {
+                "name": "cn-agent",
+                "version": "2.3.2"
+              },
+              {
+                "name": "smartlogin",
+                "version": "0.2.1-release-20181122-20181121T194443Z-gd6f0708"
+              },
+              {
+                "name": "amon-agent",
+                "version": "1.0.1"
+              },
+              {
+                "name": "vm-agent",
+                "version": "1.8.0"
+              },
+              {
+                "name": "cainstsvc",
+                "version": "0.0.3vrelease-20181122-20181121T194844Z-g92307e6"
+              },
+              {
+                "name": "amon-relay",
+                "version": "1.0.1"
+              },
+              {
+                "name": "firewaller",
+                "version": "1.5.1"
+              },
+              {
+                "name": "hagfish-watcher",
+                "version": "1.0.0-release-20181122-20181121T212704Z-g3caaea7"
+              },
+              {
+                "name": "agents_core",
+                "version": "2.1.0"
+              },
+              {
+                "name": "net-agent",
+                "version": "2.2.1"
+              },
+              {
+                "name": "marlin",
+                "version": "0.0.3"
+              },
+              {
+                "name": "cmon-agent",
+                "version": "1.10.0"
+              },
+              {
+                "name": "config-agent",
+                "version": "1.8.1"
+              },
+              {
+                "name": "cabase",
+                "version": "1.0.3vrelease-20181122-20181121T194844Z-g92307e6"
+              }
+            ],
+            "Network Interfaces": {
+              "vioif0": {"MAC Address": "62:0a:c4:e1:27:6e", "ip4addr": "10.99.99.1", "Link Status": "up", "NIC Names": ["admin"]},
+              "vioif1": {"MAC Address": "f2:5f:85:21:10:40", "ip4addr": "", "Link Status": "up", "NIC Names": ["manta"]},
+              "vioif2": {"MAC Address": "62:a2:b8:9d:53:29", "ip4addr": "", "Link Status": "up", "NIC Names": ["external"]},
+              "vioif3": {"MAC Address": "92:d3:a8:19:03:09", "ip4addr": "", "Link Status": "up", "NIC Names": ["mantanat"]}
+            },
+            "Virtual Network Interfaces": {
+              "external0": {"MAC Address": "02:08:20:b1:e8:64", "ip4addr": "172.26.19.220", "Link Status": "up", "Host Interface": "vioif2", "VLAN": "0"},
+              "manta0": {"MAC Address": "90:b8:d0:42:bd:24", "ip4addr": "10.77.77.5", "Link Status": "up", "Host Interface": "vioif1", "VLAN": "0"}
+            },
+            "Link Aggregations": {
+            }
+        }
+    },
+    "nets": {
+        "external_mainnet": {
+            "family": "ipv4",
+            "mtu": 1500,
+            "nic_tag": "external",
+            "name": "external",
+            "provision_end_ip": "172.26.19.239",
+            "provision_start_ip": "172.26.19.221",
+            "subnet": "172.26.19.0/24",
+            "uuid": "2c606372-fa8d-452d-a93c-e4e98b98bda5",
+            "vlan_id": 0,
+            "resolvers": [
+            "8.8.8.8",
+            "8.8.4.4"
+            ],
+            "gateway": "172.26.19.1",
+            "netmask": "255.255.255.0"
+        },
+        "admin_mainnet": {
+            "family": "ipv4",
+            "mtu": 1500,
+            "nic_tag": "admin",
+            "name": "admin",
+            "provision_end_ip": "10.99.99.254",
+            "provision_start_ip": "10.99.99.31",
+            "subnet": "10.99.99.0/24",
+            "uuid": "0a4d08a1-8e7f-48aa-9a68-91bdf2edd93e",
+            "vlan_id": 0,
+            "resolvers": [
+                "10.99.99.5"
+            ],
+            "routes": {
+                "10.222.222.0/24": "10.99.99.101"
+            },
+            "owner_uuids": [
+                "58a49944-2b28-65ed-8992-dfa301152a67",
+                "930896af-bf8c-48d4-885c-6573a94b1853"
+            ],
+            "netmask": "255.255.255.0"
+        },
+        "admin_racknet": {
+            "family": "ipv4",
+            "mtu": 1500,
+            "nic_tag": "admin_rack_e50",
+            "name": "admin_rack_e50",
+            "provision_end_ip": "10.222.222.250",
+            "provision_start_ip": "10.222.222.5",
+            "subnet": "10.222.222.0/24",
+            "uuid": "ef5461db-7a70-4920-b6fb-e5c4b9918de2",
+            "vlan_id": 0,
+            "resolvers": [
+                "10.99.99.5"
+            ],
+            "routes": {
+                "10.99.99.0/24": "10.222.222.1"
+            },
+            "owner_uuids": [
+                "58a49944-2b28-65ed-8992-dfa301152a67",
+                "930896af-bf8c-48d4-885c-6573a94b1853"
+            ],
+            "netmask": "255.255.255.0"
+        },
+        "external_racknet": {
+            "family": "ipv4",
+            "mtu": 1500,
+            "nic_tag": "external_rack_e50",
+            "name": "external_rack_e50",
+            "provision_end_ip": "172.26.19.251",
+            "provision_start_ip": "172.26.19.240",
+            "subnet": "172.26.19.0/24",
+            "uuid": "f769454f-31f1-4e4b-b191-c2876b6814bb",
+            "vlan_id": 0,
+            "resolvers": [
+                "8.8.8.8",
+                "8.8.4.4"
+            ],
+            "gateway": "172.26.19.1",
+            "netmask": "255.255.255.0"
+
+        }
+    }
+}
