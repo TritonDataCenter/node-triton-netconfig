@@ -506,5 +506,86 @@
             "netmask": "255.255.255.0"
 
         }
+    },
+    "nics": {
+        "main": [
+          {
+            "interface": "net0",
+            "mac": "90:b8:d0:aa:e1:8b",
+            "vlan_id": 0,
+            "nic_tag": "admin",
+            "netmask": "255.255.255.0",
+            "ip": "10.99.99.54",
+            "ips": [
+              "10.99.99.54/24"
+            ],
+            "network_uuid": "0a4d08a1-8e7f-48aa-9a68-91bdf2edd93e",
+            "mtu": 1500
+          },
+          {
+            "interface": "net1",
+            "mac": "90:b8:d0:2a:35:c4",
+            "vlan_id": 0,
+            "nic_tag": "external",
+            "gateway": "172.26.19.1",
+            "gateways": [
+              "172.26.19.1"
+            ],
+            "netmask": "255.255.255.0",
+            "ip": "172.26.19.225",
+            "ips": [
+              "172.26.19.225/24"
+            ],
+            "network_uuid": "2c606372-fa8d-452d-a93c-e4e98b98bda5",
+            "mtu": 1500,
+            "primary": true
+          }
+        ],
+        "rack": [
+          {
+            "interface": "net0",
+            "mac": "90:b8:d0:e4:4d:8b",
+            "vlan_id": 0,
+            "nic_tag": "external_rack_e50",
+            "gateway": "172.26.19.1",
+            "gateways": [
+              "172.26.19.1"
+            ],
+            "netmask": "255.255.255.0",
+            "ip": "172.26.19.246",
+            "ips": [
+              "172.26.19.246/24"
+            ],
+            "network_uuid": "f769454f-31f1-4e4b-b191-c2876b6814bb",
+            "mtu": 1500,
+            "primary": true
+          },
+          {
+            "interface": "net1",
+            "mac": "90:b8:d0:39:bc:14",
+            "vlan_id": 0,
+            "nic_tag": "manta_rack_e50",
+            "netmask": "255.255.255.0",
+            "ip": "10.111.111.6",
+            "ips": [
+              "10.111.111.6/24"
+            ],
+            "network_uuid": "84fa6540-1218-41e8-ac19-06181c258495",
+            "mtu": 1500
+          },
+          {
+            "interface": "net2",
+            "mac": "90:b8:d0:13:af:09",
+            "vlan_id": 0,
+            "nic_tag": "admin_rack_e50",
+            "netmask": "255.255.255.0",
+            "ip": "10.222.222.13",
+            "ips": [
+              "10.222.222.13/24"
+            ],
+            "network_uuid": "ef5461db-7a70-4920-b6fb-e5c4b9918de2",
+            "mtu": 1500
+          }
+        ]
     }
 }

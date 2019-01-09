@@ -5,7 +5,7 @@
  */
 
 /*
- * Copyright (c) 2018, Joyent, Inc.
+ * Copyright (c) 2019, Joyent, Inc.
  */
 'use strict';
 
@@ -17,6 +17,7 @@ const jsprim = require('jsprim');
 const VMS = data['vms'];
 const NETS = data['nets'];
 const SYSINFO = data['sysinfo'];
+const NICS = data['nics'];
 
 tap.test('nets', function (tt) {
     tt.test('main', function (t) {
@@ -41,8 +42,8 @@ tap.test('nets', function (tt) {
     tt.end();
 });
 
-tap.test('vms', function (tt)  {
-    tt.test('main',function (t)  {
+tap.test('vms', function (tt) {
+    tt.test('main', function (t) {
         const main_vm = VMS['main'];
         const external_ip = main_vm['nics'][0]['ip'];
         const manta_ip = main_vm['nics'][1]['ip'];
@@ -57,7 +58,7 @@ tap.test('vms', function (tt)  {
         t.end();
     });
 
-    tt.test('rack',function (t)  {
+    tt.test('rack', function (t) {
         const rack_vm = VMS['rack'];
         const external_ip = rack_vm['nics'][0]['ip'];
         const manta_ip = rack_vm['nics'][1]['ip'];
@@ -74,8 +75,8 @@ tap.test('vms', function (tt)  {
     tt.end();
 });
 
-tap.test('nics', function (tt)  {
-    tt.test('main',function (t)  {
+tap.test('nics', function (tt) {
+    tt.test('main', function (t) {
         const main_vm = VMS['rack'];
         const external_nic = main_vm['nics'][0];
         const manta_nic = main_vm['nics'][1];
@@ -89,7 +90,7 @@ tap.test('nics', function (tt)  {
 
         t.end();
     });
-    tt.test('rack',function (t)  {
+    tt.test('rack',function (t) {
         const rack_vm = VMS['rack'];
         const external_nic = rack_vm['nics'][0];
         const manta_nic = rack_vm['nics'][1];
@@ -106,8 +107,8 @@ tap.test('nics', function (tt)  {
     tt.end();
 });
 
-tap.test('sysinfo',function (tt)  {
-    tt.test('main',function (t)  {
+tap.test('sysinfo', function (tt) {
+    tt.test('main', function (t) {
         const sysinfo = SYSINFO['main'];
         const admin_if = sysinfo['Network Interfaces']['vioif0']; 
         const admin_ip = admin_if['ip4addr'];
@@ -129,7 +130,7 @@ tap.test('sysinfo',function (tt)  {
 
         t.end();
     });
-    tt.test('rack',function (t)  {
+    tt.test('rack',function (t) {
         const sysinfo = SYSINFO['rack'];
         const admin_if = sysinfo['Network Interfaces']['vioif0']; 
         const admin_ip = admin_if['ip4addr'];
@@ -151,5 +152,25 @@ tap.test('sysinfo',function (tt)  {
 
         t.end();
     });
+    tt.end();
+});
+
+tap.test('nics', function (tt) {
+    tt.test('main', function (t) {
+        const nics = NICS['main'];
+        const admin_ip = nics[0].ip;
+
+        t.equal(netconf.adminIpFromNicsArray(nics), admin_ip);
+        t.end();
+    });
+
+    tt.test('rack', function (t) {
+        const nics = NICS['rack'];
+        const admin_ip = nics[2].ip;
+
+        t.equal(netconf.adminIpFromNicsArray(nics), admin_ip);
+        t.end();
+    });
+
     tt.end();
 });

@@ -5,7 +5,7 @@
 #
 
 #
-# Copyright (c) 2018, Joyent, Inc.
+# Copyright (c) 2019, Joyent, Inc.
 #
 
 
@@ -71,8 +71,8 @@ check:: check-version
 # Ensure CHANGES.md and package.json have the same version.
 .PHONY: check-version
 check-version:
-	@echo version is: $(shell cat package.json | json version)
-	[[ `cat package.json | json version` == `grep '^## ' CHANGES.md | head -2 | tail -1 | awk '{print $$2}'` ]]
+	@echo version is: $(shell json -f package.json version)
+	[[ `json -f package.json version` == `awk '/^## / && first++ {print $$2; exit}' CHANGES.md` ]]
 
 .PHONY: fmt
 fmt:: | $(ESLINT)
