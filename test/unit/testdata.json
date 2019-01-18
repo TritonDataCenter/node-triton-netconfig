@@ -424,7 +424,194 @@
             },
             "Link Aggregations": {
             }
+        },
+        "virutal": {
+          "System Type": "Virtual",
+          "SDC Version": "7.0",
+          "Manufacturer": "Joyent",
+          "Product": "Joyent-Virtual-CN-0001",
+          "SKU Number": "90210 rev 42",
+          "HW Version": "1.0",
+          "HW Family": "JXX-0001",
+          "Setup": "true",
+          "VM Capable": true,
+          "Bhyve Capable": true,
+          "Bhyve Max Vcpus": 32,
+          "CPU Type": "Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz",
+          "CPU Virtualization": "vmx",
+          "CPU Physical Cores": 2,
+          "CPU Total Cores": 32,
+          "MiB of Memory": "262111",
+          "Zpool": "zones",
+          "Zpool Disks": "c0t50006D696Bd0,c1t5000CB9E23d0,c2t500086A21Fd0,c3t5000FDF133d0,c4t5000BF36BEd0,c5t500022DB67d0,c6t5000C625CEd0,c7t500011B65Fd0,c8t5000F5E76Ad0,c9t50009ECD46d0,c10t5000DB96ECd0,c11t50009845ACd0,c12t5000C5EE9Ad0,c13t5000E7C50Dd0,c14t5000C941C2d0,c15t5000FB0668d0",
+          "Zpool Profile": "mirror",
+          "Disks": {
+            "c0t50006D696Bd0": {
+              "Size in GB": 600
+            },
+            "c1t5000CB9E23d0": {
+              "Size in GB": 600
+            },
+            "c2t500086A21Fd0": {
+              "Size in GB": 600
+            },
+            "c3t5000FDF133d0": {
+              "Size in GB": 600
+            },
+            "c4t5000BF36BEd0": {
+              "Size in GB": 600
+            },
+            "c5t500022DB67d0": {
+              "Size in GB": 600
+            },
+            "c6t5000C625CEd0": {
+              "Size in GB": 600
+            },
+            "c7t500011B65Fd0": {
+              "Size in GB": 600
+            },
+            "c8t5000F5E76Ad0": {
+              "Size in GB": 600
+            },
+            "c9t50009ECD46d0": {
+              "Size in GB": 600
+            },
+            "c10t5000DB96ECd0": {
+              "Size in GB": 600
+            },
+            "c11t50009845ACd0": {
+              "Size in GB": 600
+            },
+            "c12t5000C5EE9Ad0": {
+              "Size in GB": 600
+            },
+            "c13t5000E7C50Dd0": {
+              "Size in GB": 600
+            },
+            "c14t5000C941C2d0": {
+              "Size in GB": 600
+            },
+            "c15t5000FB0668d0": {
+              "Size in GB": 600
+            }
+          },
+          "Boot Parameters": {
+            "console": "ttyb",
+            "boot_args": "",
+            "bootargs": ""
+          },
+          "SDC Agents": [],
+          "Network Interfaces": {
+            "dnet0": {
+              "ip4addr": "10.99.99.67",
+              "Link Status": "up",
+              "NIC Names": [
+                "admin"
+              ],
+              "MAC Address": "00:10:fe:83:8b:66"
+            },
+            "dnet1": {
+              "ip4addr": "",
+              "Link Status": "up",
+              "NIC Names": [],
+              "MAC Address": "00:10:fe:f5:35:7f"
+            }
+          },
+          "Virtual Network Interfaces": {},
+          "Link Aggregations": {},
+          "Datacenter Name": "ruidc",
+          "UUID": "32dc97c7-4fab-4f7e-82b8-71009a2320f9",
+          "Admin IP": "10.99.99.67",
+          "Zpool Size in GiB": 3770,
+          "Live Image": "20181012T154011Z",
+          "Boot Time": "1547498499",
+          "Hostname": "VC32DC97C7",
+          "Serial Number": "32DC97C7",
+          "Zpool Creation": 1547498499,
+          "CN Agent Port": 36255,
+          "CN Agent IP": "10.99.99.63"
         }
+    },
+    "pools": {
+      "rack_with_reg_pool": {
+        "family": "ipv4",
+        "uuid": "ff4e2059-dfec-44ea-a735-c9efdded98c6",
+        "name": "external",
+        "networks": [
+          "2c606372-fa8d-452d-a93c-e4e98b98bda5",
+          "f769454f-31f1-4e4b-b191-c2876b6814bb"
+        ],
+        "nic_tags_present": [
+          "external",
+          "external_rack_e50"
+        ],
+        "nic_tag": "external"
+      },
+      "basic_external": {
+        "family": "ipv4",
+        "uuid": "5065943d-fa70-4eb3-8b74-2b1ecbbfe51e",
+        "name": "sdc_nat",
+        "networks": [
+          "2c606372-fa8d-452d-a93c-e4e98b98bda5"
+        ],
+        "nic_tags_present": [
+          "external"
+        ],
+        "nic_tag": "external"
+      },
+      "tags_present_external": {
+        "family": "ipv4",
+        "uuid": "5065943d-fa70-4eb3-8b74-2b1ecbbfe51e",
+        "name": "sdc_nat",
+        "networks": [
+          "2c606372-fa8d-452d-a93c-e4e98b98bda5"
+        ],
+        "nic_tags_present": [
+          "foo",
+          "external"
+        ],
+        "nic_tag": "foo"
+      },
+      "tags_present_rack_external": {
+        "family": "ipv4",
+        "uuid": "5065943d-fa70-4eb3-8b74-2b1ecbbfe51e",
+        "name": "sdc_nat",
+        "networks": [
+          "2c606372-fa8d-452d-a93c-e4e98b98bda5"
+        ],
+        "nic_tags_present": [
+          "foo",
+          "external_rack_e20"
+        ],
+        "nic_tag": "foo"
+      },
+      "not_external": {
+        "family": "ipv4",
+        "uuid": "5065943d-fa70-4eb3-8b74-2b1ecbbfe51e",
+        "name": "sdc_nat",
+        "networks": [
+          "2c606372-fa8d-452d-a93c-e4e98b98bda5"
+        ],
+        "nic_tags_present": [
+          "foo",
+          "rack_e20"
+        ],
+        "nic_tag": "foo"
+      },
+      "admin_rack": {
+        "family": "ipv4",
+        "uuid": "7dfa5ff8-2c59-4c7b-bfa4-d2c243e098af",
+        "name": "admin",
+        "networks": [
+          "0a4d08a1-8e7f-48aa-9a68-91bdf2edd93e",
+          "ef5461db-7a70-4920-b6fb-e5c4b9918de2"
+        ],
+        "nic_tags_present": [
+          "admin",
+          "admin_rack_e50"
+        ],
+        "nic_tag": "admin"
+      }
     },
     "nets": {
         "external_mainnet": {
