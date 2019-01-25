@@ -110,7 +110,7 @@ tap.test('nics', function (tt) {
 tap.test('sysinfo', function (tt) {
     tt.test('main', function (t) {
         const sysinfo = SYSINFO['main'];
-        const admin_if = sysinfo['Network Interfaces']['vioif0']; 
+        const admin_if = sysinfo['Network Interfaces']['vioif0'];
         const admin_ip = admin_if['ip4addr'];
         const admin_mac = admin_if['MAC Address'];
         const admin_tags = admin_if['NIC Names'];
@@ -121,18 +121,22 @@ tap.test('sysinfo', function (tt) {
         var no_admin_tag = jsprim.deepCopy(sysinfo);
         delete no_admin_tag['Admin NIC Tag'];
 
+        var dhcp_admin_ip = jsprim.deepCopy(sysinfo);
+        dhcp_admin_ip['Admin IP'] = 'dhcp';
+
         t.equal(sysinfo['Admin IP'], admin_ip);
         t.ok(admin_tags.indexOf(sysinfo['Admin NIC Tag']) !== -1);
 
         t.equal(netconf.adminIpFromSysinfo(sysinfo), admin_ip);
         t.equal(netconf.adminIpFromSysinfo(no_admin_ip), admin_ip);
+        t.equal(netconf.adminIpFromSysinfo(dhcp_admin_ip), admin_ip);
         t.equal(netconf.adminIpFromSysinfo(no_admin_tag), admin_ip);
 
         t.end();
     });
     tt.test('rack',function (t) {
         const sysinfo = SYSINFO['rack'];
-        const admin_if = sysinfo['Network Interfaces']['vioif0']; 
+        const admin_if = sysinfo['Network Interfaces']['vioif0'];
         const admin_ip = admin_if['ip4addr'];
         const admin_mac = admin_if['MAC Address'];
         const admin_tags = admin_if['NIC Names'];
@@ -143,11 +147,15 @@ tap.test('sysinfo', function (tt) {
         var no_admin_tag = jsprim.deepCopy(sysinfo);
         delete no_admin_tag['Admin NIC Tag'];
 
+        var dhcp_admin_ip = jsprim.deepCopy(sysinfo);
+        dhcp_admin_ip['Admin IP'] = 'dhcp';
+
         t.equal(sysinfo['Admin IP'], admin_ip);
         t.ok(admin_tags.indexOf(sysinfo['Admin NIC Tag']) !== -1);
 
         t.equal(netconf.adminIpFromSysinfo(sysinfo), admin_ip);
         t.equal(netconf.adminIpFromSysinfo(no_admin_ip), admin_ip);
+        t.equal(netconf.adminIpFromSysinfo(dhcp_admin_ip), admin_ip);
         t.equal(netconf.adminIpFromSysinfo(no_admin_tag), admin_ip);
 
         t.end();
