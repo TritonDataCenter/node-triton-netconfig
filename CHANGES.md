@@ -4,6 +4,11 @@
 
 (nothing yet)
 
+## 1.3.0
+
+* TRITON-1094 isNet() functions should be more compatible with network pools
+* TRITON-1157 add agentIpFromSysinfo to node-triton-netconfig
+
 ## 1.2.0
 
 * TRITON-1160 node-triton-netconfig adminIpFromSysinfo should account for "dhcp" value

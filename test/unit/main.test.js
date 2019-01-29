@@ -16,6 +16,7 @@ const jsprim = require('jsprim');
 
 const VMS = data['vms'];
 const NETS = data['nets'];
+const POOLS = data['pools'];
 const SYSINFO = data['sysinfo'];
 const NICS = data['nics'];
 
@@ -39,6 +40,36 @@ tap.test('nets', function (tt) {
         t.notOk(netconf.isNetAdmin(external_net));
         t.end();
     });
+    tt.end();
+});
+
+tap.test('pools', function (tt) {
+    tt.test('isNet', function (t) {
+        const basic = POOLS['basic_external'];
+        const rack_reg_external = POOLS['rack_with_reg_pool'];
+        const tags_present = POOLS['tags_present_external'];
+        const rack_tags_present = POOLS['tags_present_rack_external'];
+        const not_external = POOLS['not_external'];
+        const admin_rack = POOLS['admin_rack'];
+
+        t.ok(netconf.isNetExternal(basic));
+        t.ok(netconf.isNetExternal(rack_reg_external));
+        t.ok(netconf.isNetExternal(tags_present));
+        t.ok(netconf.isNetExternal(rack_tags_present));
+        t.notOk(netconf.isNetExternal(admin_rack));
+
+        t.ok(netconf.isNetAdmin(admin_rack));
+        t.notOk(netconf.isNetAdmin(basic));
+        t.notOk(netconf.isNetAdmin(rack_reg_external));
+        t.notOk(netconf.isNetAdmin(tags_present));
+        t.notOk(netconf.isNetAdmin(rack_tags_present));
+
+        t.notOk(netconf.isNetExternal(not_external));
+        t.notOk(netconf.isNetInternal(basic));
+
+        t.end();
+    });
+
     tt.end();
 });
 
@@ -160,6 +191,24 @@ tap.test('sysinfo', function (tt) {
 
         t.end();
     });
+
+    tt.test('virtual',function (t) {
+        const sysinfo = SYSINFO['virtual'];
+        const cn_agent_ip = sysinfo['CN Agent IP'];
+        const admin_if = sysinfo['Network Interfaces']['dnet0'];
+        const admin_ip = admin_if['ip4addr'];
+        const admin_mac = admin_if['MAC Address'];
+        const admin_tags = admin_if['NIC Names'];
+
+        t.notEqual(netconf.agentIpFromSysinfo(sysinfo), admin_ip);
+        t.equal(netconf.agentIpFromSysinfo(sysinfo), cn_agent_ip);
+
+        t.notEqual(netconf.adminIpFromSysinfo(sysinfo), cn_agent_ip);
+        t.equal(netconf.adminIpFromSysinfo(sysinfo), admin_ip);
+
+        t.end();
+    });
+
     tt.end();
 });
 
