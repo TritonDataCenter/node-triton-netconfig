@@ -611,6 +611,20 @@
           "admin_rack_e50"
         ],
         "nic_tag": "admin"
+      },
+      "manta_rack": {
+        "family": "ipv4",
+        "uuid": "7306b0bd-c250-4336-bc9b-c0a06e382560",
+        "name": "manta",
+        "networks": [
+          "cdadfce6-269a-4d4d-b73d-a18c13150cca",
+          "b0152d14-5744-4255-ab43-b2d7f0f1dc28"
+        ],
+        "nic_tags_present": [
+          "manta",
+          "manta_rack_e50"
+        ],
+        "nic_tag": "manta"
       }
     },
     "nets": {
@@ -653,6 +667,27 @@
             ],
             "netmask": "255.255.255.0"
         },
+        "manta_mainnet": {
+            "family": "ipv4",
+            "mtu": 1500,
+            "nic_tag": "manta",
+            "name": "manta",
+            "provision_end_ip": "172.27.3.254",
+            "provision_start_ip": "172.27.3.4",
+            "subnet": "172.27.3.0/24",
+            "uuid": "b0152d14-5744-4255-ab43-b2d7f0f1dc28",
+            "vlan_id": 0,
+            "resolvers": [],
+            "routes": {
+              "172.27.4.0/24": "172.27.3.1",
+              "172.27.5.0/24": "172.27.3.1"
+            },
+            "owner_uuids": [
+              "4d649f41-cf87-ca1d-c2c0-bb6a9004311d",
+              "930896af-bf8c-48d4-885c-6573a94b1853"
+            ],
+            "netmask": "255.255.255.0"
+        },
         "admin_racknet": {
             "family": "ipv4",
             "mtu": 1500,
@@ -692,6 +727,25 @@
             "gateway": "172.26.19.1",
             "netmask": "255.255.255.0"
 
+        },
+        "manta_racknet": {
+            "family": "ipv4",
+            "mtu": 1500,
+            "nic_tag": "manta_rack_e50",
+            "name": "manta_rack_e50",
+            "provision_end_ip": "192.168.100.250",
+            "provision_start_ip": "192.168.100.5",
+            "subnet": "192.168.100.0/24",
+            "uuid": "b0152d14-5744-4255-ab43-b2d7f0f1dc28",
+            "vlan_id": 0,
+            "resolvers": [],
+            "routes": {
+                "192.168.222.0/24": "192.168.100.1"
+            },
+            "owner_uuids": [
+                "4d649f41-cf87-ca1d-c2c0-bb6a9004311d"
+            ],
+            "netmask": "255.255.255.0"
         }
     },
     "nics": {

@@ -4,6 +4,10 @@
 
 (nothing yet)
 
+## 1.4.0
+
+* TRITON-1667 Want isNicManta and isNetManta functions in node-triton-netconfig
+
 ## 1.3.0
 
 * TRITON-1094 isNet() functions should be more compatible with network pools

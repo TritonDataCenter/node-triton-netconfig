@@ -24,20 +24,40 @@ tap.test('nets', function (tt) {
     tt.test('main', function (t) {
         const admin_net = NETS['admin_mainnet'];
         const external_net = NETS['external_mainnet'];
+        const manta_net = NETS['manta_mainnet'];
+
         t.ok(netconf.isNetAdmin(admin_net));
         t.notOk(netconf.isNetExternal(admin_net));
+        t.notOk(netconf.isNetManta(admin_net));
+
         t.ok(netconf.isNetExternal(external_net));
         t.notOk(netconf.isNetAdmin(external_net));
+        t.notOk(netconf.isNetManta(external_net));
+
+        t.ok(netconf.isNetManta(manta_net));
+        t.notOk(netconf.isNetAdmin(manta_net));
+        t.notOk(netconf.isNetExternal(manta_net));
+
         t.end();
     });
 
     tt.test('rack', function (t) {
         const admin_net = NETS['admin_racknet'];
         const external_net = NETS['external_racknet'];
+        const manta_net = NETS['manta_racknet'];
+
         t.ok(netconf.isNetAdmin(admin_net));
         t.notOk(netconf.isNetExternal(admin_net));
+        t.notOk(netconf.isNetManta(admin_net));
+
         t.ok(netconf.isNetExternal(external_net));
         t.notOk(netconf.isNetAdmin(external_net));
+        t.notOk(netconf.isNetManta(external_net));
+
+        t.ok(netconf.isNetManta(manta_net));
+        t.notOk(netconf.isNetAdmin(manta_net));
+        t.notOk(netconf.isNetExternal(manta_net));
+
         t.end();
     });
     tt.end();
@@ -51,18 +71,28 @@ tap.test('pools', function (tt) {
         const rack_tags_present = POOLS['tags_present_rack_external'];
         const not_external = POOLS['not_external'];
         const admin_rack = POOLS['admin_rack'];
+        const manta_rack = POOLS['manta_rack'];
 
         t.ok(netconf.isNetExternal(basic));
         t.ok(netconf.isNetExternal(rack_reg_external));
         t.ok(netconf.isNetExternal(tags_present));
         t.ok(netconf.isNetExternal(rack_tags_present));
         t.notOk(netconf.isNetExternal(admin_rack));
+        t.notOk(netconf.isNetExternal(manta_rack));
 
         t.ok(netconf.isNetAdmin(admin_rack));
         t.notOk(netconf.isNetAdmin(basic));
         t.notOk(netconf.isNetAdmin(rack_reg_external));
         t.notOk(netconf.isNetAdmin(tags_present));
         t.notOk(netconf.isNetAdmin(rack_tags_present));
+        t.notOk(netconf.isNetAdmin(manta_rack));
+
+        t.ok(netconf.isNetManta(manta_rack));
+        t.notOk(netconf.isNetManta(basic));
+        t.notOk(netconf.isNetManta(rack_reg_external));
+        t.notOk(netconf.isNetManta(tags_present));
+        t.notOk(netconf.isNetManta(rack_tags_present));
+        t.notOk(netconf.isNetManta(admin_rack));
 
         t.notOk(netconf.isNetExternal(not_external));
         t.notOk(netconf.isNetInternal(basic));
@@ -114,10 +144,16 @@ tap.test('nics', function (tt) {
         const admin_nic = main_vm['nics'][2];
 
         t.ok(netconf.isNicAdmin(admin_nic));
-        t.ok(netconf.isNicExternal(external_nic));
+        t.notOk(netconf.isNicExternal(admin_nic));
+        t.notOk(netconf.isNicManta(admin_nic));
 
-        t.notOk(netconf.isNicExternal(manta_nic));
+        t.ok(netconf.isNicExternal(external_nic));
         t.notOk(netconf.isNicAdmin(external_nic));
+        t.notOk(netconf.isNicManta(external_nic));
+
+        t.ok(netconf.isNicManta(manta_nic));
+        t.notOk(netconf.isNicAdmin(manta_nic));
+        t.notOk(netconf.isNicExternal(manta_nic));
 
         t.end();
     });
@@ -128,10 +164,16 @@ tap.test('nics', function (tt) {
         const admin_nic = rack_vm['nics'][2];
 
         t.ok(netconf.isNicAdmin(admin_nic));
-        t.ok(netconf.isNicExternal(external_nic));
+        t.notOk(netconf.isNicExternal(admin_nic));
+        t.notOk(netconf.isNicManta(admin_nic));
 
-        t.notOk(netconf.isNicExternal(manta_nic));
+        t.ok(netconf.isNicExternal(external_nic));
         t.notOk(netconf.isNicAdmin(external_nic));
+        t.notOk(netconf.isNicManta(external_nic));
+
+        t.ok(netconf.isNicManta(manta_nic));
+        t.notOk(netconf.isNicAdmin(manta_nic));
+        t.notOk(netconf.isNicExternal(manta_nic));
 
         t.end();
     });
