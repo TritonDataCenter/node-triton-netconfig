@@ -25,6 +25,7 @@ tap.test('nets', function (tt) {
         const admin_net = NETS['admin_mainnet'];
         const external_net = NETS['external_mainnet'];
         const manta_net = NETS['manta_mainnet'];
+        const foobar_net = NETS['foobar_mainnet'];
 
         t.ok(netconf.isNetAdmin(admin_net));
         t.notOk(netconf.isNetExternal(admin_net));
@@ -37,6 +38,13 @@ tap.test('nets', function (tt) {
         t.ok(netconf.isNetManta(manta_net));
         t.notOk(netconf.isNetAdmin(manta_net));
         t.notOk(netconf.isNetExternal(manta_net));
+
+        t.ok(netconf.isNetTagged(manta_net, 'manta'));
+        t.notOk(netconf.isNetTagged(manta_net, 'foobar'));
+        t.ok(netconf.isNetTagged(foobar_net, 'foobar'));
+        t.notOk(netconf.isNetAdmin(foobar_net));
+        t.notOk(netconf.isNetManta(foobar_net));
+        t.notOk(netconf.isNetExternal(foobar_net));
 
         t.end();
     });
@@ -45,6 +53,7 @@ tap.test('nets', function (tt) {
         const admin_net = NETS['admin_racknet'];
         const external_net = NETS['external_racknet'];
         const manta_net = NETS['manta_racknet'];
+        const foobar_net = NETS['foobar_racknet'];
 
         t.ok(netconf.isNetAdmin(admin_net));
         t.notOk(netconf.isNetExternal(admin_net));
@@ -57,6 +66,13 @@ tap.test('nets', function (tt) {
         t.ok(netconf.isNetManta(manta_net));
         t.notOk(netconf.isNetAdmin(manta_net));
         t.notOk(netconf.isNetExternal(manta_net));
+
+        t.ok(netconf.isNetTagged(manta_net, 'manta'));
+        t.notOk(netconf.isNetTagged(manta_net, 'foobar'));
+        t.ok(netconf.isNetTagged(foobar_net, 'foobar'));
+        t.notOk(netconf.isNetAdmin(foobar_net));
+        t.notOk(netconf.isNetManta(foobar_net));
+        t.notOk(netconf.isNetExternal(foobar_net));
 
         t.end();
     });
@@ -138,10 +154,11 @@ tap.test('vms', function (tt) {
 
 tap.test('nics', function (tt) {
     tt.test('main', function (t) {
-        const main_vm = VMS['rack'];
+        const main_vm = VMS['main'];
         const external_nic = main_vm['nics'][0];
         const manta_nic = main_vm['nics'][1];
         const admin_nic = main_vm['nics'][2];
+        const foobar_nic = main_vm['nics'][3];
 
         t.ok(netconf.isNicAdmin(admin_nic));
         t.notOk(netconf.isNicExternal(admin_nic));
@@ -154,6 +171,11 @@ tap.test('nics', function (tt) {
         t.ok(netconf.isNicManta(manta_nic));
         t.notOk(netconf.isNicAdmin(manta_nic));
         t.notOk(netconf.isNicExternal(manta_nic));
+
+        t.notOk(netconf.isNicManta(foobar_nic));
+        t.notOk(netconf.isNicAdmin(foobar_nic));
+        t.notOk(netconf.isNicExternal(foobar_nic));
+        t.ok(netconf.isNicTagged(foobar_nic, 'foobar'));
 
         t.end();
     });
@@ -162,6 +184,7 @@ tap.test('nics', function (tt) {
         const external_nic = rack_vm['nics'][0];
         const manta_nic = rack_vm['nics'][1];
         const admin_nic = rack_vm['nics'][2];
+        const foobar_nic = rack_vm['nics'][3];
 
         t.ok(netconf.isNicAdmin(admin_nic));
         t.notOk(netconf.isNicExternal(admin_nic));
@@ -174,6 +197,11 @@ tap.test('nics', function (tt) {
         t.ok(netconf.isNicManta(manta_nic));
         t.notOk(netconf.isNicAdmin(manta_nic));
         t.notOk(netconf.isNicExternal(manta_nic));
+
+        t.notOk(netconf.isNicManta(foobar_nic));
+        t.notOk(netconf.isNicAdmin(foobar_nic));
+        t.notOk(netconf.isNicExternal(foobar_nic));
+        t.ok(netconf.isNicTagged(foobar_nic, 'foobar'));
 
         t.end();
     });

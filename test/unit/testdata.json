@@ -69,6 +69,19 @@
                 ],
                 "network_uuid": "0a4d08a1-8e7f-48aa-9a68-91bdf2edd93e",
                 "mtu": 1500
+              },
+              {
+                "interface": "net3",
+                "mac": "90:b8:d0:13:aa:f0",
+                "vlan_id": 0,
+                "nic_tag": "foobar",
+                "netmask": "255.255.255.0",
+                "ip": "1.2.3.11",
+                "ips": [
+                  "1.2.3.11/24"
+                ],
+                "network_uuid": "86070487-ee4b-4f48-8955-1d378c862827",
+                "mtu": 1500
               }
             ],
             "owner_uuid": "58a49944-2b28-65ed-8992-dfa301152a67",
@@ -165,6 +178,19 @@
                   "10.222.222.13/24"
                 ],
                 "network_uuid": "ef5461db-7a70-4920-b6fb-e5c4b9918de2",
+                "mtu": 1500
+              },
+              {
+                "interface": "net3",
+                "mac": "90:b8:d0:13:ae:01",
+                "vlan_id": 0,
+                "nic_tag": "foobar_rack_f11",
+                "netmask": "255.255.255.0",
+                "ip": "1.2.4.11",
+                "ips": [
+                  "1.2.4.11/24"
+                ],
+                "network_uuid": "4268cefc-74d4-4776-becd-f98dad32c367",
                 "mtu": 1500
               }
             ],
@@ -741,6 +767,42 @@
             "resolvers": [],
             "routes": {
                 "192.168.222.0/24": "192.168.100.1"
+            },
+            "owner_uuids": [
+                "4d649f41-cf87-ca1d-c2c0-bb6a9004311d"
+            ],
+            "netmask": "255.255.255.0"
+        },
+        "foobar_mainnet": {
+            "family": "ipv4",
+            "mtu": 1500,
+            "nic_tag": "foobar",
+            "name": "foobar",
+            "provision_end_ip": "1.2.3.254",
+            "provision_start_ip": "1.2.3.10",
+            "subnet": "1.2.3.0/24",
+            "uuid": "86070487-ee4b-4f48-8955-1d378c862827",
+            "vlan_id": 0,
+            "resolvers": [],
+            "routes": {},
+            "owner_uuids": [
+              "4d649f41-cf87-ca1d-c2c0-bb6a9004311d",
+              "930896af-bf8c-48d4-885c-6573a94b1853"
+            ],
+            "netmask": "255.255.255.0"
+        },
+        "foobar_racknet": {
+            "family": "ipv4",
+            "mtu": 1500,
+            "nic_tag": "foobar_rack_f11",
+            "name": "foobar_rack_f11",
+            "provision_end_ip": "1.2.4.254",
+            "provision_start_ip": "1.2.4.10",
+            "subnet": "1.2.4.0/24",
+            "uuid": "4268cefc-74d4-4776-becd-f98dad32c367",
+            "vlan_id": 0,
+            "resolvers": [],
+            "routes": {
             },
             "owner_uuids": [
                 "4d649f41-cf87-ca1d-c2c0-bb6a9004311d"
