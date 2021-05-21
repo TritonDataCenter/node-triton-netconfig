@@ -4,6 +4,10 @@
 
 (nothing yet)
 
+## 1.5.0
+
+* [#3] want isNetTagged()/isNicTagged() for arbitrary nic tags
+
 ## 1.4.0
 
 * TRITON-1667 Want isNicManta and isNetManta functions in node-triton-netconfig
